@@ -16,15 +16,15 @@ var Movies = Backbone.Collection.extend({
   model: Movie,
 
   initialize: function() {
-    // your code here
+    // Add an event to all models add to trigger a sort after a change is made
   },
 
   comparator: 'title',
 
   sortByField: function(field) {
-    // your code here
+    this.comparator = field;
+    this.sort();
   }
-
 });
 
 var AppView = Backbone.View.extend({
