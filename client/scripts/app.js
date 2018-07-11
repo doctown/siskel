@@ -17,6 +17,11 @@ var Movies = Backbone.Collection.extend({
 
   initialize: function() {
     // Add an event to all models add to trigger a sort after a change is made
+    this.models.forEach(function(model) {
+      model.change(function() {
+        console.log('change');
+      });
+    });
   },
 
   comparator: 'title',
